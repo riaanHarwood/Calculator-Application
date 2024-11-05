@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="calc.css">
+    <script src="calc.js" defer></script>
+    <title>My Calculator</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Calculator</h1>
+        <section class="screen">
+            <input id="display" readonly>
+        </section>
+        <section class="calc-buttons">
+            <div class="calc-button-row">
+                <button class="calc-button small" id="clear">C</button>
+                <button class="calc-button" id="backspace">&larr;</button>
+                <button class="calc-button operator-button">&divide;</button>
+                <button class="calc-button operator-button">%</button> <!-- Added % button -->
+            </div>
+
+            <div class="calc-button-row">
+                <button class="calc-button number-button">7</button>
+                <button class="calc-button number-button">8</button>
+                <button class="calc-button number-button">9</button>
+                <button class="calc-button operator-button">&times;</button>
+            </div>
+            <div class="calc-button-row">
+                <button class="calc-button number-button">4</button>
+                <button class="calc-button number-button">5</button>
+                <button class="calc-button number-button">6</button>
+                <button class="calc-button operator-button">&minus;</button>
+            </div>
+            <div class="calc-button-row">
+                <button class="calc-button number-button">1</button>
+                <button class="calc-button number-button">2</button>
+                <button class="calc-button number-button">3</button>
+                <button class="calc-button operator-button">&plus;</button>
+            </div>
+        </section>
+        <div class="calc-button-row">
+            <button class="calc-button tripple number-button">0</button>
+            <button class="calc-button operator-button equals">&equals;</button> 
+        </div>
+    </div>
+</body>
+</html>
