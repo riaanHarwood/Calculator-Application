@@ -7,7 +7,14 @@ const display = document.getElementById("display");
 const historyList = document.getElementById("history-list");
 const historyPanel = document.getElementById("history");
 const menuButton = document.getElementById("menu-button");
-const clearHistoryButton = document.getElementById('clear-history');
+
+// Create and add a clear history button inside the menu dynamically
+const clearHistoryButton = document.createElement("button");
+clearHistoryButton.textContent = "Clear History";
+clearHistoryButton.id = "clear-history";
+clearHistoryButton.style.display = "block"; // Ensure it appears correctly
+clearHistoryButton.style.margin = "10px auto"; // Center it
+historyPanel.appendChild(clearHistoryButton);
 
 // Function to update the display
 function updateDisplay(value) {
@@ -75,10 +82,21 @@ function addToHistory(entry) {
     updateHistoryList();
 }
 
-// Load history into the menu
+// Load history into the menu with scrolling
 function updateHistoryList() {
     historyList.innerHTML = history.map((item) => `<li>${item}</li>`).join("");
+
+    // Ensure scrolling if history is long
+    historyList.style.maxHeight = "300px"; // Adjust as needed
+    historyList.style.overflowY = "auto";
 }
+
+// Function to clear history
+clearHistoryButton.addEventListener("click", () => {
+    history = [];
+    localStorage.removeItem("history");
+    updateHistoryList();
+});
 
 // Toggle menu with animation
 menuButton.addEventListener("click", () => {

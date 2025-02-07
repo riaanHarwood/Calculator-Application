@@ -26,7 +26,7 @@ body {
 }
 
 #menu-button {
-    font-size: 4em;
+    font-size: 3.5em;
     background: none;
     border: none;
     cursor: pointer;
@@ -48,7 +48,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     width: 250px;
-    max-height: 70vh; /* Limits height to 70% of the viewport */
+    max-height: 500px; /* Limits height to 70% of the viewport */
     overflow-y: auto; /* Enables scrolling when content overflows */
 }
 
@@ -70,6 +70,22 @@ body {
     white-space: nowrap; /* Prevent text wrapping */
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+#clear-history {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 90%;
+    display: block;
+    text-align: center;
+}
+
+#clear-history:hover {
+    background-color: darkred;
 }
 
 /* Hide history by default */
