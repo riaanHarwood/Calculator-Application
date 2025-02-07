@@ -27,6 +27,24 @@ function handleNumberClick(number) {
     updateDisplay(currentInput);
 }
 
+
+function handleNumberClick(number) {
+    currentInput += number; //shows number as one, removes comma 
+    updateDisplay(formatWithCommas(currentInput));
+}
+
+// Function to format the number with commas (e.g. "1000000" -> "1,000,000")
+function formatWithCommas(value) {
+    value = value.replace(/[^0-9]/g, '');
+    return value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+// Removes commas before calculation
+function removeCommas(value) {
+    return value.replace(/,/g, ''); // Remove all commas
+}
+
+
 // Function to handle operator button clicks
 function handleOperatorClick(op) {
     if (currentInput === "" && firstOperand === null) return;
@@ -37,6 +55,7 @@ function handleOperatorClick(op) {
     if (op === "%") {
         if (currentInput !== "") {
             currentInput = (parseFloat(currentInput) / 100).toString();
+            currentInput = (parseFloat(removeCommas(currentInput)) / 100).toString();
             updateDisplay(currentInput);
             return;
         }
